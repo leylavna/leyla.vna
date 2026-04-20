@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Global Journey Map</title>
+
+<!-- LINK CSS -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>My Global Supply Chain Journey 🌍</h1>
+
+<div class="map-container">
+
+  <!-- MAP -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg">
+
+  <!-- ROUTES -->
+  <svg class="routes" viewBox="0 0 1000 500" preserveAspectRatio="none">
+
+  <!-- VN → USA -->
+  <path d="M785,246 Q500,150 260,177" class="route"/>
+
+  <!-- VN → EU -->
+  <path d="M785,246 Q600,130 500,152" class="route"/>
+
+  <!-- VN → Japan -->
+  <path d="M785,246 Q820,230 868,170" class="route"/>
+
+  <!-- VN → Korea -->
+  <path d="M785,246 Q810,210 834,170" class="route"/>
+
+  <!-- VN → China -->
+  <path d="M785,246 Q770,240 791,200" class="route"/>
+
+  <!-- VN → Australia -->
+  <path d="M785,246 Q820,330 900,365" class="route"/>
+
+</svg>
+
+  <!-- POINTS -->
+  <div class="point" style="top:49.2%; left:78.5%;" onclick="showInfo('vn')"></div>
+  <div class="point" style="top:35%; left:26%;" onclick="showInfo('usa')"></div>
+  <div class="point" style="top:30%; left:50%;" onclick="showInfo('eu')"></div>
+  <div class="point" style="top:33.5%; left:86.89%;" onclick="showInfo('japan')"></div>
+  <div class="point" style="top:34%; left:83.3%;" onclick="showInfo('korea')"></div>
+  <div class="point" style="top:40.11%; left: 79%;" onclick="showInfo('china')"></div>
+  <div class="point" style="top:73%; left:90.5%;" onclick="showInfo('australia')"></div>
+
+</div>
+
+<div class="info-box" id="info">
+  Click a location to explore my journey ✈️
+</div>
+
+<script>
+const data = {
+  vn: {
+    title: "Vietnam 🇻🇳",
+    img: "https://images.unsplash.com/photo-1528127269322-539801943592",
+    desc: "Starting point<br>Strong academic foundation<br>Leadership & ambition to go global"
+  },
+  usa: {
+    title: "United States 🇺🇸",
+    img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    desc: "Vietnam’s largest export market<br>High standards & global competition"
+  },
+  eu: {
+    title: "European Union 🇪🇺",
+    img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
+    desc: "Strict regulations (EVFTA)<br>Focus on sustainability & quality"
+  },
+  japan: {
+    title: "Japan 🇯🇵",
+    img: "https://images.unsplash.com/photo-1505066836043-7d6b53b1e8fa",
+    desc: "Extremely high standards<br>Precision logistics"
+  },
+  korea: {
+    title: "South Korea 🇰🇷",
+    img: "https://images.unsplash.com/photo-1506074670649-71a5b4c8e47f",
+    desc: "Major investor in Vietnam<br>Dynamic market"
+  },
+  china: {
+    title: "China 🇨🇳",
+    img: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d",
+    desc: "Largest trading partner<br>Supply chain hub"
+  },
+  australia: {
+    title: "Australia 🇦🇺",
+    img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9",
+    desc: "CPTPP partner<br>Study destination (RMIT)"
+  }
+};
+
+function showInfo(place) {
+  const info = document.getElementById("info");
+  const d = data[place];
+
+  info.innerHTML = `
+    <h2>${d.title}</h2>
+    <img src="${d.img}">
+    <p>${d.desc}</p>
+  `;
+}
+</script>
+
+</body>
+</html>
